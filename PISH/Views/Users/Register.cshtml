@@ -1,0 +1,40 @@
+﻿@model PISH.Models.UsersViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<div id="contentWrapper" class="float">
+    <div id="content">
+        <div id="workAreaR" class="col-md-4">
+            <section>
+                <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                    <h4>Criar uma nova conta</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <input asp-for="Name" class="form-control" placeholder="Nome" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input asp-for="Email" class="form-control" placeholder="nome@exemplo.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Password" class="form-control" placeholder="Senha" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirmar senha" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-enter">Cadastrar</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    @section Scripts {
+        @await Html.PartialAsync("_ValidationScriptsPartial")
+    }
+</div>
